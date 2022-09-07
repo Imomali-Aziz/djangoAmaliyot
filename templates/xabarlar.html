@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Xabarlar{% endblock title %}
+
+{% block content %}
+    <div class="container">
+        <h1>Xabarlar</h1>
+        <table>
+            <tr>
+                <th>№</th>
+                <th>Ismi</th>
+                <th>Familiyasi</th>
+                <th>Telefon raqami</th>
+                <th>Email</th>
+                <th>Xabar</th>
+            </tr>
+        {% for request in object_list %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ request.ismingiz }}</td>
+                <td>{{ request.familiyangiz }}</td>
+                <td>{{ request.telefon }}</td>
+                <td>{{ request.email }}</td>
+                <td>{{ request.xabar }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+{% endblock content %}
